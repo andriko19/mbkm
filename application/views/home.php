@@ -3,17 +3,17 @@
 <head>
   <meta charset="utf-8">
   <title>SSO - UWP</title>
-  <link rel="shortcut icon" type="image/jpg" href="<?= base_url(); ?>assets/img/favicon.png" />
+  <link rel="shortcut icon" type="image/jpg" href="<?= base_url(); ?>assets/frontend/img/favicon.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="" />
   <meta name="author" content="http://ict.uwp.ac.id/" />
   <!-- css -->
-  <link href="<?= base_url(); ?>assets/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="<?= base_url(); ?>assets/css/fancybox/jquery.fancybox.css" rel="stylesheet">
-  <link href="<?= base_url(); ?>assets/css/jcarousel.css" rel="stylesheet" />
-  <link href="<?= base_url(); ?>assets/css/flexslider.css" rel="stylesheet" />
-  <link href="<?= base_url(); ?>assets/js/owl-carousel/owl.carousel.css" rel="stylesheet">
-  <link href="<?= base_url(); ?>assets/css/style.css" rel="stylesheet" />
+  <link href="<?= base_url(); ?>assets/frontend/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="<?= base_url(); ?>assets/frontend/css/fancybox/jquery.fancybox.css" rel="stylesheet">
+  <link href="<?= base_url(); ?>assets/frontend/css/jcarousel.css" rel="stylesheet" />
+  <link href="<?= base_url(); ?>assets/frontend/css/flexslider.css" rel="stylesheet" />
+  <link href="<?= base_url(); ?>assets/frontend/js/owl-carousel/owl.carousel.css" rel="stylesheet">
+  <link href="<?= base_url(); ?>assets/frontend/css/style.css" rel="stylesheet" />
   
   <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
   <!--[if lt IE 9]>
@@ -33,7 +33,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="<?= base_url(); ?>home"><img src="<?= base_url(); ?>assets/img/sso-logo.png" alt="logo"/></a>
+            <a class="navbar-brand" href="<?= base_url(); ?>home"><img src="<?= base_url(); ?>assets/frontend/img/sso-logo.png" alt="logo"/></a>
         </div>
           <div class="navbar-collapse collapse ">
             <ul class="nav navbar-nav">
@@ -53,7 +53,7 @@
     <div id="main-slider" class="flexslider">
       <ul class="slides">
         <li>
-          <img src="<?= base_url(); ?>assets/img/slides/gedung-a.jpg" alt="" />
+          <!-- <img src="<?= base_url(); ?>assets/frontend/img/slides/gedung-a.jpg" alt="" /> -->
           <!-- <div class="flex-caption">
             <div class="item_introtext"> 
               <strong>Online Education</strong>
@@ -62,7 +62,7 @@
           </div> -->
         </li>
         <li>
-          <img src="<?= base_url(); ?>assets/img/slides/2.jpg" alt="" />
+          <!-- <img src="<?= base_url(); ?>assets/frontend/img/slides/2.jpg" alt="" /> -->
           <!-- <div class="flex-caption">
             <div class="item_introtext"> 
               <strong>School Education</strong>
@@ -71,7 +71,7 @@
           </div> -->
         </li>
         <li>
-          <img src="<?= base_url(); ?>assets/img/slides/3.jpg" alt="" />
+          <!-- <img src="<?= base_url(); ?>assets/frontend/img/slides/3.jpg" alt="" /> -->
           <!-- <div class="flex-caption">
             <div class="item_introtext"> 
               <strong>Collage Education</strong>
@@ -106,12 +106,12 @@
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro consequatur aliquam, incidunt eius magni provident</p>
               <div class="row">
                 <div class="col-md-6 icon-sso">
-                  <a href=""> <img src="<?= base_url(); ?>assets/img/icon-sso/1.png" alt="logo"/> </a>
-                  <a href=""> <img src="<?= base_url(); ?>assets/img/icon-sso/1.png" alt="logo"/> </a>
+                  <a href=""> <img src="<?= base_url(); ?>assets/frontend/img/icon-sso/1.png" alt="logo"/> </a>
+                  <a href=""> <img src="<?= base_url(); ?>assets/frontend/img/icon-sso/1.png" alt="logo"/> </a>
                 </div>
                 <div class="col-md-6 icon-sso">
-                  <a href=""> <img src="<?= base_url(); ?>assets/img/icon-sso/1.png" alt="logo"/> </a>
-                  <a href=""> <img src="<?= base_url(); ?>assets/img/icon-sso/1.png" alt="logo"/> </a>
+                  <a href=""> <img src="<?= base_url(); ?>assets/frontend/img/icon-sso/1.png" alt="logo"/> </a>
+                  <a href=""> <img src="<?= base_url(); ?>assets/frontend/img/icon-sso/1.png" alt="logo"/> </a>
                 </div>
               </div>
             </div>
@@ -220,16 +220,16 @@
 <!-- javascript
     ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
-<script src="<?= base_url(); ?>assets/js/jquery.js"></script>
-<script src="<?= base_url(); ?>assets/js/jquery.easing.1.3.js"></script>
-<script src="<?= base_url(); ?>assets/js/bootstrap.min.js"></script>
-<script src="<?= base_url(); ?>assets/js/jquery.fancybox.pack.js"></script>
-<script src="<?= base_url(); ?>assets/js/jquery.fancybox-media.js"></script> 
-<script src="<?= base_url(); ?>assets/js/portfolio/jquery.quicksand.js"></script>
-<script src="<?= base_url(); ?>assets/js/portfolio/setting.js"></script>
-<script src="<?= base_url(); ?>assets/js/jquery.flexslider.js"></script>
-<script src="<?= base_url(); ?>assets/js/animate.js"></script>
-<script src="<?= base_url(); ?>assets/js/custom.js"></script>
-<script src="<?= base_url(); ?>assets/js/owl-carousel/owl.carousel.js"></script>
+<script src="<?= base_url(); ?>assets/frontend/js/jquery.js"></script>
+<script src="<?= base_url(); ?>assets/frontend/js/jquery.easing.1.3.js"></script>
+<script src="<?= base_url(); ?>assets/frontend/js/bootstrap.min.js"></script>
+<script src="<?= base_url(); ?>assets/frontend/js/jquery.fancybox.pack.js"></script>
+<script src="<?= base_url(); ?>assets/frontend/js/jquery.fancybox-media.js"></script> 
+<script src="<?= base_url(); ?>assets/frontend/js/portfolio/jquery.quicksand.js"></script>
+<script src="<?= base_url(); ?>assets/frontend/js/portfolio/setting.js"></script>
+<script src="<?= base_url(); ?>assets/frontend/js/jquery.flexslider.js"></script>
+<script src="<?= base_url(); ?>assets/frontend/js/animate.js"></script>
+<script src="<?= base_url(); ?>assets/frontend/js/custom.js"></script>
+<script src="<?= base_url(); ?>assets/frontend/js/owl-carousel/owl.carousel.js"></script>
 </body>
 </html>
