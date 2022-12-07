@@ -98,45 +98,99 @@
     <div class="container">
       <div class="row">
         <div class="skill-home"> 
+
           <div class="skill-home-solid clearfix"> 
-            <div class="col-md-3 text-center">
-              <span class="icons c1"><i class="fa fa-trophy"></i></span>
-              <div class="box-area">
-              <h3>Web Development</h3> 
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro consequatur aliquam, incidunt eius magni provident</p>
-              <div class="row">
-                <div class="col-md-6 icon-sso">
-                  <a href=""> <img src="<?= base_url(); ?>assets/frontend/img/icon-sso/1.png" alt="logo"/> </a>
-                  <a href=""> <img src="<?= base_url(); ?>assets/frontend/img/icon-sso/1.png" alt="logo"/> </a>
-                </div>
-                <div class="col-md-6 icon-sso">
-                  <a href=""> <img src="<?= base_url(); ?>assets/frontend/img/icon-sso/1.png" alt="logo"/> </a>
-                  <a href=""> <img src="<?= base_url(); ?>assets/frontend/img/icon-sso/1.png" alt="logo"/> </a>
-                </div>
+            <a href="" class="">
+              <div class="col-md-3 text-center link-hover">
+                <span class="icons c1"><img src="<?= base_url(); ?>assets/frontend/img/icon-sso/1.png" alt="logo"/></span>
+                <div class="box-area">
+                <h3>SIAKAD</h3> 
+                <p>Sistem Informasi Akademik</p>
               </div>
-            </div>
+            </a>
           </div>
-          <div class="col-md-3 text-center"> 
-            <span class="icons c2"><i class="fa fa-picture-o"></i></span> 
-            <div class="box-area">
-              <h3>UI Design</h3> 
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro consequatur aliquam, incidunt eius magni provident</p>
-            </div>
+
+          <div class="skill-home-solid clearfix"> 
+            <a href="">
+              <div class="col-md-3 text-center link-hover">
+                <span class="icons c1"><img src="<?= base_url(); ?>assets/frontend/img/icon-sso/1.png" alt="logo"/></span>
+                <div class="box-area">
+                <h3>SIRISMAS</h3> 
+                <p>Sistem Informasi Rsiset dan Pengabdian Kepada Masyarakat</p>
+              </div>
+            </a>
           </div>
-          <div class="col-md-3 text-center"> 
-            <span class="icons c3"><i class="fa fa-desktop"></i></span> 
-            <div class="box-area">
-              <h3>Interaction</h3> 
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro consequatur aliquam, incidunt eius magni provident</p>
-            </div>
+
+          <div class="skill-home-solid clearfix"> 
+            <a href="" class="">
+              <div class="col-md-3 text-center link-hover">
+                <span class="icons c1"><img src="<?= base_url(); ?>assets/frontend/img/icon-sso/1.png" alt="logo"/></span>
+                <div class="box-area">
+                <h3>SIAKAD</h3> 
+                <p>Sistem Informasi Akademik</p>
+              </div>
+            </a>
           </div>
-          <div class="col-md-3 text-center"> 
-            <span class="icons c4"><i class="fa fa-globe"></i></span> 
-            <div class="box-area">
-              <h3>User Experiance</h3> 
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro consequatur aliquam, incidunt eius magni provident</p>
-            </div>
+
+          <div class="skill-home-solid clearfix"> 
+            <a href="">
+              <div class="col-md-3 text-center link-hover">
+                <span class="icons c1"><img src="<?= base_url(); ?>assets/frontend/img/icon-sso/1.png" alt="logo"/></span>
+                <div class="box-area">
+                <h3>SIRISMAS</h3> 
+                <p>Sistem Informasi Rsiset dan Pengabdian Kepada Masyarakat</p>
+              </div>
+            </a>
           </div>
+
+          <div class="skill-home-solid clearfix"> 
+            <a href="">
+              <div class="col-md-3 text-center link-hover">
+                <span class="icons c1"><img src="<?= base_url(); ?>assets/frontend/img/icon-sso/1.png" alt="logo"/></span>
+                <div class="box-area">
+                <h3>SIRISMAS</h3> 
+                <p>Sistem Informasi Rsiset dan Pengabdian Kepada Masyarakat</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="skill-home-solid clearfix"> 
+            <a href="">
+              <div class="col-md-3 text-center link-hover">
+                <span class="icons c1"><img src="<?= base_url(); ?>assets/frontend/img/icon-sso/1.png" alt="logo"/></span>
+                <div class="box-area">
+                <h3>SIRISMAS</h3> 
+                <p>Sistem Informasi Rsiset dan Pengabdian Kepada Masyarakat</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="skill-home-solid clearfix"> 
+            <a href="" class="">
+              <div class="col-md-3 text-center link-hover">
+                <span class="icons c1"><img src="<?= base_url(); ?>assets/frontend/img/icon-sso/1.png" alt="logo"/></span>
+                <div class="box-area">
+                <h3>SIAKAD</h3> 
+                <p>Sistem Informasi Akademik</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="skill-home-solid clearfix"> 
+            <a href="">
+              <div class="col-md-3 text-center link-hover">
+                <span class="icons c1"><img src="<?= base_url(); ?>assets/frontend/img/icon-sso/1.png" alt="logo"/></span>
+                <div class="box-area">
+                <h3>SIRISMAS</h3> 
+                <p>Sistem Informasi Rsiset dan Pengabdian Kepada Masyarakat</p>
+              </div>
+            </a>
+          </div>
+          
+
+
+
+
         </div>
       </div>
     </div> 
