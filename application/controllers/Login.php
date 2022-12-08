@@ -24,10 +24,10 @@ class Login extends CI_Controller {
 		]);
 
 		if ($this->form_validation->run() == false) {
-			// $data['title'] = 'Login';
-			// $this->load->view('templates/auth-header', $data);
-			$this->load->view('templates/admin_login');
-			// $this->load->view('templates/auth-footer');
+			$data['title'] = 'Login';
+			$this->load->view('templates/auth_header', $data);
+			$this->load->view('templates/auth_login');
+			$this->load->view('templates/auth_footer');
 		} else {
 			// apabila validasi alert-success
 			$this->_login();
@@ -128,5 +128,56 @@ class Login extends CI_Controller {
 		$this->session->set_flashdata('message', 'Anda Sudah Berhasil Logout.');
 		redirect('home');
 	}
+
+	public function auth_register()
+	{
+		// $user = $this->session->userdata('username');
+		// $data['user'] 	= $this->admin_model->user($user);
+		// $data['akun_ormawa'] = $this->admin_model->getAkunOrmawa();
+		// $data['title'] 	= 'Akun Ormawa';
+		
+		$this->form_validation->set_rules('nama_depan', 'Nama Depan', 'required|trim', [
+			'required' => 'Tidak Boleh Kosong!'
+		]);
+		$this->form_validation->set_rules('nama_belakang', 'Nama Belakang', 'required|trim', [
+			'required' => 'Tidak Boleh Kosong!'
+		]);
+		$this->form_validation->set_rules('username', 'Username', 'required|trim|is_unique[users.username]', [
+			'is_unique' => 'Username sudah digunakan!',
+			'required' => 'Tidak Boleh Kosong!'
+		]);
+		$this->form_validation->set_rules('password1', 'Password', 'required|trim|min_length[6]|matches[password2]',[
+			'matches' => 'Password harus sama!',
+			'min_length' => 'Password harus 6 karakter!',
+			'required' => 'Tidak Boleh Kosong!'
+		]);
+		$this->form_validation->set_rules('password2', 'Password', 'required|trim|matches[password1]');
+
+		if($this->form_validation->run()==false) {
+			$data['title'] = 'Register';
+			$this->load->view('templates/auth_header', $data);
+			$this->load->view('templates/auth_register');
+			$this->load->view('templates/auth_footer');
+		} else {
+			$data = [
+				'nama_depan'   => htmlspecialchars($this->input->post('nama_depan', 'true')),
+				'nama_belakang'=> htmlspecialchars($this->input->post('nama_belakang', 'true')),
+				'username'     => htmlspecialchars($this->input->post('username', 'true')),
+				'password'     => password_hash($this->input->post('password1'), PASSWORD_DEFAULT),
+				'role' 			=> htmlspecialchars($this->input->post('role', 'true')),
+				'foto' 		   	 => 'default.jpg',
+				'created_at'   => date('Y-m-d')
+			];
+			$this->admin_model->tambah_ormawa_baru($data);
+			$this->session->set_flashdata('message', '<div class="alert alert-primary alert-dismissible fade show" role="alert">
+			Akun Baru Berhasil <strong> DiTambahkan!.</strong>
+				<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>');
+			redirect('admin/akun_ormawa');
+		}
+	}
+
 
 }
