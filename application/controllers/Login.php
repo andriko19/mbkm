@@ -7,7 +7,7 @@ class Login extends CI_Controller {
 	{
 		parent:: __construct();
 		$this->load->library('form_validation');
-		// $this->load->model('users_model');
+		$this->load->model('auth_model');
 	}
 
 	public function index()
@@ -41,9 +41,9 @@ class Login extends CI_Controller {
 
 		$user = $this->db->get_where('users', ['username' => $username])->row_array();
 		?>
-			<link rel="stylesheet" href="<?= base_url(); ?>assets/sweetalert2/sweetalert2.min.css">
-			<link rel="stylesheet" href="<?= base_url(); ?>assets/sweetalert2/animate.min.css">
-			<script src="<?= base_url(); ?>assets/Sweetalert2/Sweetalert2.min.js"></script>
+			<link rel="stylesheet" href="<?= base_url(); ?>assets/frontend/sweetalert2/sweetalert2.min.css">
+			<link rel="stylesheet" href="<?= base_url(); ?>assets/frontend/sweetalert2/animate.min.css">
+			<script src="<?= base_url(); ?>assets/frontend/sweetalert2/sweetalert2.min.js"></script>
 			<style type="text/css">
 				body {
 					font-family: "Helvetice Neve", Helvetice, Arial, sans-serif;
@@ -59,10 +59,9 @@ class Login extends CI_Controller {
 			if (password_verify($password, $user['password'])) {
 				// jika benar
 				$data = [
-					'username' 	 		=> $user['username'],
-					'nama_depan' 		=> $user['nama_depan'],
-					'nama_belakang' => $user['nama_belakang'],
-					'role' 					=> $user['role']
+					'username'=> $user['username'],
+					'nama' 		=> $user['nama'],
+					'role' 		=> $user['role']
 				];
 				$this->session->set_userdata($data);
 				if ($user['role'] == 'administrator') {
@@ -79,7 +78,8 @@ class Login extends CI_Controller {
 					<?php
 				} else {
 					?>
-						<script type="text/javascript">
+						<!-- jika rolenya selain administrator -->
+						<!-- <script type="text/javascript">
 							Swal.fire({
 				        icon: 'success',
 				        title: 'Success',
@@ -87,7 +87,7 @@ class Login extends CI_Controller {
 				      }).then((result) => {
 				      	window.location='<?=site_url('admin/dashboard_informasi')?>';
 				      }) 
-						</script>
+						</script> -->
 					<?php
 				}
 			} else {
@@ -98,7 +98,7 @@ class Login extends CI_Controller {
 			        title: 'Peringatan',
 			        text: 'Password Anda Salah!'
 			      }).then((result) => {
-			      	window.location='<?=site_url('home')?>';
+			      	window.location='<?=site_url('login')?>';
 			      }) 
 					</script>
 				<?php
@@ -111,7 +111,7 @@ class Login extends CI_Controller {
 		        title: 'Peringatan',
 		        text: 'Username Belum Terdaftar!'
 		      }).then((result) => {
-		      	window.location='<?=site_url('home')?>';
+		      	window.location='<?=site_url('login')?>';
 		      }) 
 				</script>
 			<?php
@@ -121,37 +121,53 @@ class Login extends CI_Controller {
 	public function logout() 
 	{
 		$this->session->unset_userdata('username');
-		$this->session->unset_userdata('nama_depan');
-		$this->session->unset_userdata('nama_belakang');
+		$this->session->unset_userdata('nama');
 		$this->session->unset_userdata('role');
 
-		$this->session->set_flashdata('message', 'Anda Sudah Berhasil Logout.');
-		redirect('home');
+		?>
+			<link rel="stylesheet" href="<?= base_url(); ?>assets/frontend/sweetalert2/sweetalert2.min.css">
+			<link rel="stylesheet" href="<?= base_url(); ?>assets/frontend/sweetalert2/animate.min.css">
+			<script src="<?= base_url(); ?>assets/frontend/sweetalert2/sweetalert2.min.js"></script>
+			<style type="text/css">
+				body {
+					font-family: "Helvetice Neve", Helvetice, Arial, sans-serif;
+					font-size : 1.124em;
+					font-weight: normal;
+				}
+			</style>
+			<body></body>
+
+			<script type="text/javascript">
+				Swal.fire({
+					icon: 'success',
+					title: 'Success',
+					text: 'Anda Berhasil Logout!'
+				}).then((result) => {
+					window.location='<?=site_url('login')?>';
+				}) 
+			</script>
+		<?php
 	}
 
 	public function auth_register()
 	{
-		// $user = $this->session->userdata('username');
-		// $data['user'] 	= $this->admin_model->user($user);
-		// $data['akun_ormawa'] = $this->admin_model->getAkunOrmawa();
-		// $data['title'] 	= 'Akun Ormawa';
-		
-		$this->form_validation->set_rules('nama_depan', 'Nama Depan', 'required|trim', [
+		$this->form_validation->set_rules('nama', 'Nama', 'required|trim', [
 			'required' => 'Tidak Boleh Kosong!'
 		]);
-		$this->form_validation->set_rules('nama_belakang', 'Nama Belakang', 'required|trim', [
-			'required' => 'Tidak Boleh Kosong!'
+		$this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email', [
+			'required' => 'Tidak Boleh Kosong!',
+			'valid_email' => 'Format Email Salah!'
 		]);
-		$this->form_validation->set_rules('username', 'Username', 'required|trim|is_unique[users.username]', [
+		$this->form_validation->set_rules('username', 'Username', 'required|trim', [
 			'is_unique' => 'Username sudah digunakan!',
 			'required' => 'Tidak Boleh Kosong!'
 		]);
-		$this->form_validation->set_rules('password1', 'Password', 'required|trim|min_length[6]|matches[password2]',[
+		$this->form_validation->set_rules('password', 'Password', 'required|trim|min_length[6]|matches[password_confirm]',[
 			'matches' => 'Password harus sama!',
 			'min_length' => 'Password harus 6 karakter!',
 			'required' => 'Tidak Boleh Kosong!'
 		]);
-		$this->form_validation->set_rules('password2', 'Password', 'required|trim|matches[password1]');
+		$this->form_validation->set_rules('password_confirm', 'Password', 'required|trim|matches[password]');
 
 		if($this->form_validation->run()==false) {
 			$data['title'] = 'Register';
@@ -160,22 +176,16 @@ class Login extends CI_Controller {
 			$this->load->view('templates/auth_footer');
 		} else {
 			$data = [
-				'nama_depan'   => htmlspecialchars($this->input->post('nama_depan', 'true')),
-				'nama_belakang'=> htmlspecialchars($this->input->post('nama_belakang', 'true')),
-				'username'     => htmlspecialchars($this->input->post('username', 'true')),
-				'password'     => password_hash($this->input->post('password1'), PASSWORD_DEFAULT),
-				'role' 			=> htmlspecialchars($this->input->post('role', 'true')),
-				'foto' 		   	 => 'default.jpg',
-				'created_at'   => date('Y-m-d')
+				'username' 		=> htmlspecialchars($this->input->post('username', 'true')),
+				'nama'   			=> htmlspecialchars($this->input->post('nama', 'true')),
+				'email'				=> htmlspecialchars($this->input->post('email', 'true')),
+				'password'  	=> password_hash($this->input->post('password'), PASSWORD_DEFAULT),
+				'role' 				=> "administrator",
+				'created_at'  => date('Y-m-d')
 			];
-			$this->admin_model->tambah_ormawa_baru($data);
-			$this->session->set_flashdata('message', '<div class="alert alert-primary alert-dismissible fade show" role="alert">
-			Akun Baru Berhasil <strong> DiTambahkan!.</strong>
-				<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-					<span aria-hidden="true">&times;</span>
-				</button>
-			</div>');
-			redirect('admin/akun_ormawa');
+			$this->auth_model->add_users($data);
+			$this->session->set_flashdata('message', '<span type="" class="alert btn btn-block btn-success btn-lg font-weight-medium auth-form-btn mb-3">Akun Baru Berhasil <strong> DiTambahkan!.</strong></span>');
+			redirect('login');
 		}
 	}
 

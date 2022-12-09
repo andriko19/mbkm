@@ -11,13 +11,16 @@
             <h6 class="font-weight-light">Signing up is easy. It only takes a few steps</h6>
             <form class="pt-3" method="post" action="<?= base_url('login/auth_register');?>">
               <div class="form-group">
-                <input type="text" class="form-control form-control-lg" id="exampleInputUsername1" name="username" placeholder="Username">
+                <input type="text" class="form-control form-control-lg" id="nama" name="nama" placeholder="Nama" value="<?= set_value('nama');?>"> <?= form_error('nama', '<small class="text-danger">', '</small>');?>
               </div>
               <div class="form-group">
-                <input type="email" class="form-control form-control-lg" id="exampleInputEmail1" name="email" placeholder="Email">
+                <input type="text" class="form-control form-control-lg" id="exampleInputEmail1" name="email" placeholder="Email" value="<?= set_value('email');?>"> <?= form_error('email', '<small class="text-danger">', '</small>');?>
               </div>
               <div class="form-group">
-                <input type="password" class="form-control form-control-lg" id="exampleInputPassword1" name="password" placeholder="Password">
+                <input type="text" class="form-control form-control-lg" id="exampleInputUsername1" name="username" placeholder="Username" value="<?= set_value('username');?>"> <?= form_error('username', '<small class="text-danger">', '</small>');?>
+              </div>
+              <div class="form-group">
+                <input type="password" class="form-control form-control-lg" id="exampleInputPassword1" name="password" placeholder="Password" alue="<?= set_value('password');?>"> <?= form_error('password', '<small class="text-danger">', '</small>');?>
               </div>
               <div class="form-group">
                 <input type="password" class="form-control form-control-lg" id="exampleInputPassword1" name="password_confirm" placeholder="Password Confirm">

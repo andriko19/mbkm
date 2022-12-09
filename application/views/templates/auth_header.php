@@ -16,6 +16,10 @@
   <!-- End plugin css for this page -->
   <!-- inject:css -->
   <link rel="stylesheet" href="<?= base_url(); ?>assets/backend/css/vertical-layout-light/style.css">
+  <!-- Template sweetalert2 CSS -->
+  <link rel="stylesheet" href="<?= base_url(); ?>assets/frontend/sweetalert2/sweetalert2.min.css">
+  <!-- Animate CSS-->
+  <link rel="stylesheet" href="<?= base_url(); ?>assets/frontend/sweetalert2/animate.min.css">
   <!-- endinject -->
 </head>
 

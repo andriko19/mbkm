@@ -4,21 +4,25 @@
       <div class="content-wrapper d-flex align-items-center auth px-0">
         <div class="row w-100 mx-0">
           <div class="col-lg-4 mx-auto">
+            
+            <?= $this->session->flashdata('message');?>
+
             <div class="auth-form-light text-left py-5 px-4 px-sm-5">
               <div class="brand-logo">
               <img src="<?= base_url(); ?>assets/frontend/img/sso-logo.png" alt="logo"/>
               </div>
               <h4>Hello! let's get started</h4>
               <h6 class="font-weight-light">Sign in to continue.</h6>
-              <?php echo form_open_multipart('auth');?>
+              <?php echo form_open_multipart('login');?>
                 <div class="form-group">
-                  <input type="email" class="form-control form-control-lg" id="exampleInputEmail1" name="username" placeholder="Username">
+                <input type="text" class="form-control form-control-lg" id="exampleInputUsername1" name="username" placeholder="Username" value="<?= set_value('username');?>"> <?= form_error('username', '<small class="text-danger">', '</small>');?>
                 </div>
                 <div class="form-group">
-                  <input type="password" class="form-control form-control-lg" id="exampleInputPassword1" name="password" placeholder="Password">
+                <input type="password" class="form-control form-control-lg" id="exampleInputPassword1" name="password" placeholder="Password" alue="<?= set_value('password');?>"> <?= form_error('password', '<small class="text-danger">', '</small>');?>
                 </div>
                 <div class="mt-3">
-                  <a class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" href="<?= base_url(); ?>assets/backend/index.html">SIGN IN</a>
+                  <button type="submit" class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn">SIGN IN</button>
+                  <!-- <a class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" href="<?= base_url(); ?>assets/backend/index.html">SIGN IN</a> -->
                 </div>
                 <div class="my-2 d-flex justify-content-between align-items-center">
                   <div class="form-check">
