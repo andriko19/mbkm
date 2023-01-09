@@ -5,7 +5,7 @@
         <div class="col-lg-4 mx-auto">
           <div class="auth-form-light text-left py-5 px-4 px-sm-5">
             <div class="brand-logo">
-              <img src="<?= base_url(); ?>assets/frontend/img/sso-logo.png" alt="logo"/>
+              <img src="<?= base_url(); ?>assets/frontend/img/mbkm-logo.png" alt="logo"/>
             </div>
             <h4>New here?</h4>
             <h6 class="font-weight-light">Signing up is easy. It only takes a few steps</h6>

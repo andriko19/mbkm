@@ -76,18 +76,18 @@ class Login extends CI_Controller {
 				      }) 
 						</script>
 					<?php
-				} else {
+				} else if ($user['role'] == 'mahasiswa'){
 					?>
 						<!-- jika rolenya selain administrator -->
-						<!-- <script type="text/javascript">
+						<script type="text/javascript">
 							Swal.fire({
 				        icon: 'success',
 				        title: 'Success',
-				        text: 'Selamat Admin BEM atau UKM, Anda Berhasil Login!'
+				        text: 'Selamat, Anda Berhasil Login Sebagai Mahasiswa!'
 				      }).then((result) => {
 				      	window.location='<?=site_url('admin/dashboard_informasi')?>';
 				      }) 
-						</script> -->
+						</script>
 					<?php
 				}
 			} else {
@@ -180,7 +180,7 @@ class Login extends CI_Controller {
 				'nama'   			=> htmlspecialchars($this->input->post('nama', 'true')),
 				'email'				=> htmlspecialchars($this->input->post('email', 'true')),
 				'password'  	=> password_hash($this->input->post('password'), PASSWORD_DEFAULT),
-				'role' 				=> "administrator",
+				'role' 				=> "mahasiswa",
 				'created_at'  => date('Y-m-d')
 			];
 			$this->auth_model->add_users($data);
